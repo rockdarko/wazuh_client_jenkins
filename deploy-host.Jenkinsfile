@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('chrony') {
             steps {
-                sh "ansible-playbook -i ${INVENTORY_CELLARDOOR}/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} -e chrony_server=${env.SERVER} deploy.yml"
+                sh "ansible-playbook -i ${INVENTORY_CELLARDOOR}/env/${env.ENV}/${env.ENV}.hosts -l ${env.HOST} -e wazuh_server=${env.SERVER} -e wazuh_client_default_group=${env.GROUP} -e wazuh_installer_url=${env.INSTALLER_URL} deploy.yml"
             }
         }
 

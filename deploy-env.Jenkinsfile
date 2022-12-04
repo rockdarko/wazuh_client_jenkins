@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('chrony') {
             steps {
-                sh "ansible-playbook -i /var/lib/jenkins/cellardoor/env/${env.ENV}/${env.ENV}.hosts -e chrony_server=${env.SERVER} deploy.yml"
+                sh "ansible-playbook -i /var/lib/jenkins/cellardoor/env/${env.ENV}/${env.ENV}.hosts -e wazuh_server=${env.SERVER} -e wazuh_client_default_group=${env.GROUP} -e wazuh_installer_url=${env.INSTALLER_URL} deploy.yml"
             }
         }
 
