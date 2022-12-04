@@ -1,0 +1,4 @@
+roles:
+  - name: wazuh_client
+    src: git+git@github.com:rockdarko/wazuh_client.git
+    version: "main"
